@@ -18,7 +18,7 @@ with serial.Serial(PORT, BAUD, timeout=1) as ser:
       if line == b'quit':
         done = True
       elif line == b'clear':
-        _ = [print() for x in range(CLEAR_LINES)]
+        print('\n' * CLEAR_LINES)
       else:
         qr = pyqrcode.create(line, error=ERROR)
         print(qr.terminal(quiet_zone=QUIET_ZONE))
