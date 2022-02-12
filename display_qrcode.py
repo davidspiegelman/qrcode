@@ -13,7 +13,7 @@ def clear_lines():
 clear_lines()
 done = False
 
-with serial.Serial(PORT, BAUD, timeout=1) as ser:
+with serial.Serial(PORT, BAUD, timeout=0.9) as ser:
   while not done:
     line = ser.readline()
     if line != b'':
