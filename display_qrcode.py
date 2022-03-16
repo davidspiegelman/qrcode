@@ -14,7 +14,7 @@ def clear_lines():
 clear_lines()
 done = False
 
-with serial.Serial(PORT, BAUD, timeout=0.9) as ser:
+with serial.Serial(PORT, BAUD, timeout=0.45) as ser:
   line = ''
   while not done:
     line = line + ser.readline().decode(errors='ignore')
